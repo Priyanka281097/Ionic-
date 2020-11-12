@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list>
+  <ion-item>
+    <ion-input type = "text" [(ngModel)] ="input" ></ion-input>
+    <ion-button size = "small" (click) = "showByName()" > Search by Name </ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-input type = "text" [(ngModel)] ="input1" > </ion-input>
+    <ion-button size = "small" (click) = "showByCity()" > Search by City </ion-button>
+  </ion-item>
+</ion-list>
+
+<ion-content>
+  <ion-card *ngFor = "let i of users" style="padding: 20px;" >
+    <ion-card-header>
+      <ion-card-title> {{i.name}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>{{i.city}} </ion-card-subtitle>
+      <ion-card-subtitle>{{i.age}} </ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
