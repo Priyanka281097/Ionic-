@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>companyDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="3" size-md="6" size-sm="12" size="12" *ngFor = "let i of list">
+        <ion-card>
+          <ion-toolbar>
+            <ion-icon style="float: right;padding: 10px 10px 0 0;"  name="create" (click) = "editItem(i)"></ion-icon>
+            <ion-icon style="float: right;padding: 10px 10px 0 0;" name="trash" (click) = "deleteItem(i)"></ion-icon>
+          </ion-toolbar>
+          <ion-card-header>
+            <ion-title style="text-align: center;">{{i.type}}</ion-title>
+            <ion-card-subtitle style="font-weight: bold;"> {{i.Memberid}}</ion-card-subtitle>
+            <ion-card-subtitle>{{i.name}}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            {{i.city}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button >
+    <ion-icon name="add" (click) = "addDetails()"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
